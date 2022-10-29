@@ -1,17 +1,9 @@
-import React, { useState } from "react";
-import Details from "../details/Details";
-
 import CardStyle, { Button, CardImg, Cards, CardTitle } from "./Home.styled";
+import { useNavigate } from "react-router-dom";
 
 const RecipeCard = ({ data }) => {
-  const [detailData, setDetailData] = useState();
-  // console.log("recipedata:", data);
+  const navigate = useNavigate();
 
-  const dataDetail = (e) => {
-    setDetailData(data[e.target.id]);
-    // console.log("index:", e.target.id);
-  };
-  // console.log("DetailData", detailData);
   return (
     <>
       <Cards>
@@ -24,14 +16,17 @@ const RecipeCard = ({ data }) => {
                 <CardImg src={recipe.image} alt="" />
               </div>
 
-              <Button id={index} onClick={dataDetail}>
+              <Button
+                id={index}
+                onClick={(e) =>
+                  navigate("/details", { state: data[e.target.id] })
+                }>
                 View More
               </Button>
             </CardStyle>
           );
         })}
       </Cards>
-      <Details detailData={detailData} />
     </>
   );
 };

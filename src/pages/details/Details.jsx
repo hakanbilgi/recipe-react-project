@@ -1,7 +1,7 @@
 import React from "react";
 
-const Details = ({data}) => {
-  
+const Details = ({detailData}) => {
+
   return <div>Details</div>;
 };
 
