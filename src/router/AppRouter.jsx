@@ -6,11 +6,7 @@ const AppRouter = () => {
   return (
 
 <>
-<Routes>
-  <Route path="/login" element={<PrivateRouter/>}>
-    <Route path="/" element={<Home/>}/>
-  </Route>
-</Routes>
+
 </>
 
   )
