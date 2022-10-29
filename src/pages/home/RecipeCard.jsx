@@ -1,6 +1,6 @@
 import React from "react";
-import { CardImg } from "react-bootstrap";
-import CardStyle, { Cards } from "./Home.styled";
+
+import CardStyle, { Button, CardImg, Cards, CardTitle } from "./Home.styled";
 
 const RecipeCard = ({ data }) => {
   console.log("recipedata:", data);
@@ -10,11 +10,12 @@ const RecipeCard = ({ data }) => {
         const { recipe } = item;
         return (
           <CardStyle key={index}>
-            <h3>{recipe.label}</h3>
+            <CardTitle>{recipe.label}</CardTitle>
+            <div>
+              <CardImg src={recipe.image} alt="" />
+            </div>
 
-            <CardImg src={recipe.image} alt="" />
-
-            <button>View More</button>
+            <Button>View More</Button>
           </CardStyle>
         );
       })}
