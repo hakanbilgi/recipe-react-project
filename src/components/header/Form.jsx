@@ -12,7 +12,7 @@ const Form = () => {
   console.log("data", data);
 
   const getFood = async () => {
-    const url = `https://api.edamam.com/search?q=${query}&app_id=29e1b965&app_key=d36f57f6f46ee8cfaffc07daa4a40dad&mealType=${meal}`;
+    const url = `https://api.edamam.com/search?q=${query}&app_id=9ddaf361&app_key=7d03a913bbb4932d5104698556347200&mealType=${meal}`;
     try {
       const { data } = await axios(url);
       setData(data.hits);
@@ -22,7 +22,7 @@ const Form = () => {
   };
 
   // const getFood = async () => {
-  //   const url = `https://api.edamam.com/search?q=${query}&app_id=29e1b965&app_key=d36f57f6f46ee8cfaffc07daa4a40dad&mealType=${meal}`;
+  //   const url = `https://api.edamam.com/search?q=${query}&app_id=9ddaf361&app_key=7d03a913bbb4932d5104698556347200&mealType=${meal}`;
 
   //   try {
   //     fetch(url)
