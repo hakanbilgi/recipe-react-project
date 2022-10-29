@@ -1,13 +1,13 @@
-import Header from "./components/header/Header";
-import Navbar from "./components/navbar/Navbar";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
+
+
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Header/>
-      
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
