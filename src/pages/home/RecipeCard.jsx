@@ -20,7 +20,8 @@ const RecipeCard = ({ data }) => {
                 id={index}
                 onClick={(e) =>
                   navigate("/details", { state: data[e.target.id] })
-                }>
+                }
+              >
                 View More
               </Button>
             </CardStyle>
