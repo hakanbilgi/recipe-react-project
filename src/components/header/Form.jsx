@@ -12,7 +12,7 @@ const Form = () => {
   console.log("data", data);
 
   const getFood = async () => {
-    const url = `https://api.edamam.com/search?q=${query}&app_id=9ddaf361&app_key=d2be62d509b57c8981d88d42052634e4&mealType=${meal}`;
+    const url = `https://api.edamam.com/search?q=${query}&app_id=29e1b965&app_key=d36f57f6f46ee8cfaffc07daa4a40dad&mealType=${meal}`;
     try {
       const { data } = await axios(url);
       setData(data.hits);
