@@ -1,7 +1,7 @@
 import Div, { Area, Button, Input, LoadingDiv } from "./Login.styled";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PaperBag from "../../assets/giphy.gif";
+import PaperBag from "../../assets/food.gif";
 import Loading from "../../assets/loading.gif";
 
 function Login() {
