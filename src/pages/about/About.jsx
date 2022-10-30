@@ -12,7 +12,7 @@ const About = () => {
           alt=""
         />
         <AboutUs>
-          Hi There I'm Sezgin A. <br />
+          Hi There I'm Hakan Bilgi <br />
           Frontend Developer <br />
           My experience are React.js, Javascript, HTML5, CSS3, Bootstrapt, SASS
           and etc.
