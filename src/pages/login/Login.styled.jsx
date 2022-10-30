@@ -21,7 +21,7 @@ export const Area = styled.div`
   border: 3px solid ${({ theme }) => theme.colors.loginBorderColor};
   padding: 1.4rem;
   background: transparent;
-  border-radius: 25%;
+  border-radius: 15%;
   box-shadow: rgba(0, 0, 0, 0.598) 0px 3px 10px;
   @media (max-width: ${({ theme }) => theme.responsive.lg}) {
     width: 300px;
