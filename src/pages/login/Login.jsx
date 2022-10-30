@@ -14,7 +14,7 @@ function Login() {
   // console.log(formData);
 
   const localStorageKey = {
-    username: "mail@mail.com",
+    username: "hello@world.com",
     password: "123",
   };
   localStorage.setItem("LoginAuthor", JSON.stringify(localStorageKey));
