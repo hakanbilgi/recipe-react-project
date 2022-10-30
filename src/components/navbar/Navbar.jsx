@@ -1,22 +1,31 @@
 import React from "react";
-import home from "../../assets/home.svg";
-import { NavbarImg, NavbarLink, NavbarStyle } from "./Navbar.styled";
+import NavbarStyle, {
+  NavbarImg,
+  NavbarLink,
+  NavbarLinkLogin,
+} from "./Navbar.styled";
 import { useNavigate } from "react-router-dom";
+import FoodTruck from "../../assets/food-truck.gif";
 
 const Navbar = () => {
   const navigate = useNavigate();
   return (
     <NavbarStyle>
       <div>
-        <NavbarImg src={home} alt="logo" onClick={() => navigate("/")} />
+        <NavbarImg
+          src={FoodTruck}
+          alt="cook"
+          onClick={() => navigate("/home")}
+        />
       </div>
 
       <div>
-        <ul>
-          <NavbarLink to="/">HOME</NavbarLink>
-          <NavbarLink to="/about">ABOUT</NavbarLink>
-          <NavbarLink to="/login">LOGOUT</NavbarLink>
-        </ul>
+        <NavbarLink to="/home">HOME</NavbarLink>
+        <NavbarLink to="/about">ABOUT</NavbarLink>
+        <NavbarLink to="/contact">CONTACT</NavbarLink>
+        <NavbarLinkLogin className="logout" to="/">
+          LOGOUT
+        </NavbarLinkLogin>
       </div>
     </NavbarStyle>
   );

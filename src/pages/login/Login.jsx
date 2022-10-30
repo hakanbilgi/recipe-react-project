@@ -1,65 +1,80 @@
-import React from "react";
-import LoginDiv from "./Login.styled";
+import Div, { Area, Button, Input, LoadingDiv } from "./Login.styled";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PaperBag from "../../assets/paper-bag.gif";
+import Loading from "../../assets/loading.gif";
 
-const Login = () => {
+function Login() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+  // console.log(formData);
 
   const localStorageKey = {
-    username: "test@test.com",
+    username: "mail@mail.com",
     password: "123",
   };
   localStorage.setItem("LoginAuthor", JSON.stringify(localStorageKey));
 
-  // console.log(JSON.parse(localStorage.getItem("LoginAuthor")));
-
   const eventHandleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  console.log("formstate:", form);
 
   const checked = () => {
     const storageData = JSON.parse(localStorage.getItem("LoginAuthor"));
     if (
-      form.username !== storageData.username &&
-      form.password !== storageData.password
+      formData.username === storageData.username &&
+      formData.password === storageData.password
     ) {
-      return alert("Hata");
-    }
-
-    form.username !== storageData.username && alert("Invalid username");
-    form.password !== storageData.password && alert("Invalid password");
-
-    if (
-      form.username === storageData.username &&
-      form.password === storageData.password
-    ) {
-      navigate("/");
+      setLoading(true);
+      setFormData({
+        username: "",
+        password: "",
+      });
+      // console.log(formData);
+      setTimeout(() => {
+        setLoading(false);
+        navigate("/home");
+      }, 4300);
+    } else {
+      alert("Sorry :( Username or Password is wrong!");
     }
   };
 
-  return (
-    <LoginDiv>
-      <input
-        type="email"
-        name="username"
-        placeholder="Username"
-        onChange={eventHandleChange}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        onChange={eventHandleChange}
-      />
-      <button onClick={checked}>Login</button>
-    </LoginDiv>
-  );
-};
+  if (!loading) {
+    return (
+      <Div>
+        <Area>
+          <img src={PaperBag} alt="cooker" width={200} />
+          <Input
+            type="email"
+            placeholder="example@example.com"
+            name="username"
+            onChange={eventHandleChange}
+          />
+          <Input
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={eventHandleChange}
+          />
+          <Button onClick={checked}>LOGIN</Button>
+        </Area>
+      </Div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <LoadingDiv>
+        <div>Logging in Succesfull :)</div>
+        <img src={Loading} alt="bag" />
+      </LoadingDiv>
+    );
+  }
+}
 
 export default Login;

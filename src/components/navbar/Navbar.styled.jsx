@@ -1,21 +1,64 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const NavbarStyle = styled.nav`
+const NavbarStyle = styled.nav`
+  background-color: ${({ theme }) => theme.colors.bgDarkColor};
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-export const NavbarLink = styled(NavLink)`
-  margin: 0 1rem;
-  text-decoration: none;
-  color: black;
-  &:hover {
-    color: red;
+  padding: 0 1rem;
+  @media (max-width: ${({ theme }) => theme.responsive.sm}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
 export const NavbarImg = styled.img`
-  width: 150px;
+  width: 125px;
+  @media (max-width: ${({ theme }) => theme.responsive.lg}) {
+    width: 100px;
+  }
+  @media (max-width: ${({ theme }) => theme.responsive.sm}) {
+    width: 80px;
+  }
 `;
+
+export const NavbarLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem 0 3rem;
+  font-size: 1.5rem;
+
+  @media (max-width: ${({ theme }) => theme.responsive.lg}) {
+    font-size: 1.25rem;
+    margin: 0 0.7rem;
+  }
+  @media (max-width: ${({ theme }) => theme.responsive.sm}) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin: 0.8rem;
+  }
+`;
+
+export const NavbarLinkLogin = styled(Link)`
+  color: red;
+  text-decoration: none;
+  margin: 0 1rem 0 3rem;
+  font-size: 1.5rem;
+
+  @media (max-width: ${({ theme }) => theme.responsive.lg}) {
+    font-size: 1.25rem;
+    margin: 0 0.7rem;
+  }
+  @media (max-width: ${({ theme }) => theme.responsive.sm}) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin: 0.8rem;
+  }
+`;
+
+export default NavbarStyle;
