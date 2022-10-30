@@ -20,13 +20,13 @@ const Contact = () => {
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/sezginakgul/"
+              href="https://www.linkedin.com/in/hakanbilgi/"
               target="_blank"
               rel="noreferrer">
               <FaLinkedinIn />
             </a>
             <a
-              href="mailto:sezgin.akgull@gmail.com"
+              href="mailto:hknblg34@gmail.com"
               target="_blank"
               rel="noreferrer">
               <BiMailSend />
