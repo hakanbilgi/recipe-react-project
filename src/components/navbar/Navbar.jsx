@@ -5,7 +5,7 @@ import NavbarStyle, {
   NavbarLinkLogin,
 } from "./Navbar.styled";
 import { useNavigate } from "react-router-dom";
-import FoodTruck from "../../assets/food-truck.gif";
+import FoodTruck from "../../assets/food.gif";
 
 const Navbar = () => {
   const navigate = useNavigate();
