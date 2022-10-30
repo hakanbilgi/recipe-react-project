@@ -13,9 +13,10 @@ const About = () => {
         />
         <AboutUs>
           Hi There I'm Hakan Bilgi <br />
-          Frontend Developer <br />
-          My experience are React.js, Javascript, HTML5, CSS3, Bootstrapt, SASS
-          and etc.
+          Full Stack Developer <br />
+          My experience are HTML5, CSS3, JavaScript, React.js, Redux,React
+          Native, SASS, Bootstrap, Material.UI, Python, SQL, Git, GitHub, APIs,
+          Agile, Jira, SDLC, OOP, RESTful APIs. and etc.
           <br />
           <br />
           <p>
